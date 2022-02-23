@@ -4,8 +4,12 @@ let textPosition = 0;
 let i = 0;
 var speed = 85;
 var typedMessage = "";
-var delayArr = [27000, 500, 1000, 10000, 29250, 25000, 250, 500, 3000, 20000, 25000, 6500, 21000, 16000, 10000, 3000, 10000, 2000]
+var prevMessage = "";
+var delayArr = [27000, 500, 1000, 10000, 29250, 25000, 250, 500, 3000, 20000, 25000, 6500, 22000, 17000, 10000, 3000, 10000, 2000]
 typewriter = () => {
+  if (i == 14) {
+    typedMessage = prevMessage;
+  }
   var typingMessage = typedMessage + messageArray[i].substring(0, textPosition);
   document.querySelector("#typing-text").innerHTML = typingMessage;
 
@@ -13,6 +17,9 @@ typewriter = () => {
     setTimeout(typewriter, speed);
   }
   if (textPosition > messageArray[i].length) {
+    if (i == 13) {
+      prevMessage = typedMessage;
+    }
     typedMessage += messageArray[i] + "<div>";
     i++;
     textPosition = 0;
