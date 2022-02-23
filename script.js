@@ -4,7 +4,7 @@ let textPosition = 0;
 let i = 0;
 var speed = 85;
 var typedMessage = "";
-var delayArr = [27000, 500, 1000, 11000, 20000, 25000, 500, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000]
+var delayArr = [27000, 500, 1000, 11000, 27000, 25000, 500, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000]
 typewriter = () => {
   var typingMessage = typedMessage + messageArray[i].substring(0, textPosition);
   document.querySelector("#typing-text").innerHTML = typingMessage;
